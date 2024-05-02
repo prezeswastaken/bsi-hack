@@ -6,7 +6,6 @@ export default defineEventHandler(async (event) => {
 
 	if (loginRequest.name === "admin" && loginRequest.password === "admin") {
 		return {
-			status: 200,
 			name: "admin",
 		} as LoginResponse;
 	} else if (
@@ -14,12 +13,10 @@ export default defineEventHandler(async (event) => {
 		loginRequest.password === "password123"
 	) {
 		return {
-			status: 200,
 			name: "kacper",
 		} as LoginResponse;
 	} else {
-		return {
-			status: 401,
-		} as LoginResponse;
+		setResponseStatus(event, 401);
+		return {} as LoginResponse;
 	}
 });
