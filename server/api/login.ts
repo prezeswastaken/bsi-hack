@@ -4,7 +4,7 @@ import { LoginResponse } from "~/types/LoginResponse";
 export default defineEventHandler(async (event) => {
 	const loginRequest = await readBody<LoginRequest>(event);
 
-	if (loginRequest.name === "admin" && loginRequest.password === "admin") {
+	if (loginRequest.name === "admin" && loginRequest.password === "bsi123!@#") {
 		return {
 			name: "admin",
 		} as LoginResponse;

@@ -31,7 +31,10 @@ async function handleLogin() {
 
 <template>
     <div class="text-7xl text-accent">Login</div>
-    <form @submit.prevent="handleLogin" class="flex flex-col gap-2 mt-10">
+    <form
+        @submit.prevent="handleLogin"
+        class="flex flex-col gap-2 mt-10 min-w-96"
+    >
         <p>Name</p>
         <input
             type="text"
@@ -45,7 +48,7 @@ async function handleLogin() {
             v-model="form.password"
         />
         <button class="py-3 px-5 bg-accent text-bg">Login</button>
-        <p v-if="errorMessage" class="text-red-500">{{ errorMessage }}</p>
+        <p class="text-red-500">{{ errorMessage }}</p>
     </form>
 </template>
 
